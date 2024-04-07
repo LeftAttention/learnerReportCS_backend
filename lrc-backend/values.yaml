@@ -1,0 +1,20 @@
+replicaCount: 2
+
+image:
+  repository: 160472638876.dkr.ecr.us-east-2.amazonaws.com/lrc-backend
+  pullPolicy: IfNotPresent
+  tag: latest
+
+service:
+  type: LoadBalancer
+  port: 80
+  targetPort: 3000
+
+serviceAccount:
+  create: true
+
+ingress:
+  enabled: false
+
+autoscaling:
+  enabled: false
